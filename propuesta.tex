@@ -50,16 +50,35 @@
 %forma general de solución propuesta con resultados esperados
 Actualmente, el país presenta un creciente desarrollo de la actividad del compostaje como una alternativa a la gestión de residuos orgánicos, los cuales provienen principalmente de restos de alimentos de mercado o ferias libres y de vegetales producto de las podas de parques y jardines. \\
 El compost se produce a base de residuos orgánicos y específicamente suele ser utilizado como mejorador de algunas propiedades físicas del suelo como son su estructura, drenaje, aireación, retencion de agua y nutrientes, prevención de la erosión del suelo, recuperación de suelos degradados y superficies alteradas sin uso agrícola. El compostaje se presenta como una alternativa a la quema agrícola.\\
-Con el fin de mantener un estándar en la producción, mantenimiento, almacenaje, transporte y posterior venta de compost, es que se creó una norma que busca, en términos generales, promover la gestión adecuada de los recursos sólidos orgánicos generados en el territorio nacional, evitar la producción de plagas, junto con promover y fomentar el desarrollo de la industria nacional de compost. En ese sentido, la norma cubre aspectos relacionados a la clasificación del compost, requisito de materias primas, requisitos del producto compostado, los que incluyen requisitos sanitarios y físico químicos. Estos últimos abarcan desde contenido de nutrientes, capacidad de rehidratación, pH, materia orgánica, hasta olores y humedad.\\
+Con el fin de mantener un estándar en la producción, mantenimiento, almacenaje, transporte y posterior venta de compost, es que se creó una norma que busca, en términos generales, promover la gestión adecuada de los recursos sólidos orgánicos generados en el territorio nacional, evitar la producción de plagas, junto con promover y fomentar el desarrollo de la industria nacional de compost. En ese sentido, la norma cubre aspectos relacionados a la clasificación del compost, requisito de materias primas, requisitos del producto compostado, los que incluyen requisitos sanitarios y físico químicos. Estos últimos, abarcan desde contenido de nutrientes, capacidad de rehidratación, pH, materia orgánica, hasta olores y humedad.\\
+%%%%%
+%Continuar desarrollando estas ideas:
+%-El encargado de supervisar la calidad del Compost para el uso de agricultura orgánica es el SAG
+
+%-El SAG no tiene la capacidade de fiscalizar todos estos procesos.
+
+%-Se requiere TI para mejorar sus capacidades de fiscalización
+%%%%
+
 \section{Solución propuesta}
 Según la NCh 2880 es de vital importancia el registro y control de temperaturas en las pilas de compost debido a la pasteurización y control de requisitos sanitarios, en especial los microbiológicos, los cuales indican que se debe mantener una temperatura mayor o igual a 55°C de tres a doce días dependiendo del método de compostaje. Además mantener cierta temperatura por un período de tiempo, indica el grado de maduración de la pila, lo que influye directamente en la clasificación de este. \\
-Se propone el diseño  fabricación de una lanza de medición de temperaturas en pilas de compost, que medante una API REST, envíe la información necesaria de cada pila (como posición, fecha, id pila, etc.) junto con la toma de temperatura a un servidor que se encagará de guardar los datos. Estos datos, luego serán consultados por una app móvil para los agricultores y por una aplicación web para el SAG o algún organsmo pertinente (fiscalizador o comprador).
-
+Se propone el diseño  fabricación de una lanza de medición de temperaturas en pilas de compost, que envíe la información necesaria de cada pila (como posición, fecha, id pila, etc.) junto con la toma de temperatura a un servidor que se encagará de guardar los datos. Estos datos, luego serán consultados por una app móvil para los agricultores y por una aplicación web para el SAG o algún organsmo pertinente (fiscalizador o comprador).
+%%%
+%falta la componente criptográfica de la solución es importante.
+%%%
 
 \section{Objetivos generales}
-Facilitar la medición de temperatura en pilas de compost (con método de volteo o estática aireada) mediante un dispositivo sensor que, conectado a internet, envíe la información a un servidor para que sea guardada; mantener un registro de temperaturas que sirva de prueba confiable para el organismo fiscalizador y para los fuuros compradores; generar un reporte temporal con los datos de la pila y sus mediciones.
+Facilitar la medición de temperatura en pilas de compost (con método de volteo o estática aireada) mediante un dispositivo sensor que, conectado a internet, envíe la información a un servidor para que sea guardada; mantener un registro de temperaturas que sirva de prueba confiable
+%%%
+%por esto necesitamos el uso de PKI
+%https://es.wikipedia.org/wiki/Infraestructura_de_clave_p%C3%BAblica
+%%%
+para el organismo fiscalizador y para los fuuros compradores; generar un reporte temporal con los datos de la pila y sus mediciones.
 
 \section{Objetivos específicos}
+%%%
+%hay que considerar el desarrollo una infraestructura PKI para el prototipo
+%%%
 \begin{enumerate}
 	\item Diseño y fabricación de un instrumento de medición de temperatura para pilas de compost 
 	\item Diseño e implementación de aplicación web para consultas de temperaturas
@@ -107,6 +126,8 @@ Se lista los recursos necesario y su utilización:
 \end{itemize}
 \section{Planificación propuesta }
 %considere como plazo final aproximado 31 de marzo de 2021, con defensa y calificación registrada.
+\includegraphics[scale=0.45]{figures/gantt.png}
+
 
 \section{Bibliografía}
 

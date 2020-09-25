@@ -53,12 +53,12 @@
 Actualmente el país presenta un creciente desarrollo de la actividad del compostaje como una alternativa a la gestión de residuos orgánicos, los cuales provienen principalmente de restos de alimentos de mercado o ferias libres y de vegetales producto de las podas de parques y jardines. \\
 El compost se produce a base de residuos orgánicos y específicamente suele ser utilizado como mejorador de algunas propiedades físicas del suelo como son su estructura, drenaje, aireación, retencion de agua y nutrientes, prevención de la erosión del suelo, recuperación de suelos degradados y superficies alteradas sin uso agrícola. El compostaje se presenta como una alternativa a la quema agrícola.\\
 Con el fin de mantener un estándar en la producción, mantenimiento, almacenaje, transporte y posterior venta de compost, es que se creó una norma que busca, en términos generales, promover la gestión adecuada de los recursos sólidos orgánicos generados en el territorio nacional, evitar la producción de plagas, junto con promover y fomentar el desarrollo de la industria nacional de compost. En ese sentido, la norma cubre aspectos relacionados a la clasificación del compost, requisito de materias primas, requisitos del producto compostado, los que incluyen requisitos sanitarios y físico químicos. Estos últimos, abarcan desde contenido de nutrientes, capacidad de rehidratación, pH, materia orgánica, hasta olores y humedad.\\
-El ornagismo a cargo de supervisar el cumplimiento de estas normas y la calidad del compost, para su uso de agricultura orgánica, es el Servicio Agrícola y Ganadero (SAG) que depende del ministerio de agricultura. El SAG no tiene la capacidad de fiscalizar todos estos procesos, pero sí otorga los permisos necesarios a organismos de certificación nacionales o extranjeros, públicos o privados, para ingresar al Registro de Entidades Certificadoras de Productos Orgánicos, quienes cumplen las formalidades, requisitos y protocolos técnicos y profesionales necesarios para la ejecución de las labores de certificación. Estos organismos están enfocados principalmente a la actividad industrial de fabricación de productos agrícolas. Por otro lado, también existe el Sistema de auto certificación con fiscalización directa del SAG para Organizaciones de Agricultores Ecológicos, integradas por pequeños productores, familiares, campesinos e indígenas, con personalidad jurídica que requieran validar la calidad de su compost para su posterior venta. Esta fiscalización se realiza con personal del SAG en terreno y requiere por parte del productor cumplir con las normas técnicas y reglamentos establecidos, llevar registros de sus actividades productivas que permitan establecer un sistema de rastreabilidad, presentar un sistema de control interno y sus procedimientos, entre otros requisitos. Por lo tanto, para realizar este proceso de fiscalización, es necesario invertir recursos por parte del SAG y de los pequeños y medianos productores, sin embargo, desde el año 2016 el SAG ha bajado su cobertura de fiscalización de un 45\% a 18\% para predios orgánicos, lo que demuestra que el servicio no tiene la capacidad suficiente para realizar esta fiscalización. Una mejora tecnológica para estos procesos de certificación y fiscalización, requerirían soluciones que implementen Tecnologías de la Información (TI), lo cual es de bajo costo y tiempo.
+El organismo a cargo de supervisar el cumplimiento de estas normas y la calidad del compost, para su uso de agricultura orgánica, es el Servicio Agrícola y Ganadero (SAG) que depende del ministerio de agricultura. El SAG no tiene la capacidad de fiscalizar todos estos procesos, pero sí otorga los permisos necesarios a organismos de certificación nacionales o extranjeros, públicos o privados, para ingresar al Registro de Entidades Certificadoras de Productos Orgánicos, quienes cumplen las formalidades, requisitos y protocolos técnicos y profesionales necesarios para la ejecución de las labores de certificación. Estos organismos están enfocados principalmente a la actividad industrial de fabricación de productos agrícolas. Por otro lado, también existe el Sistema de auto certificación con fiscalización directa del SAG para Organizaciones de Agricultores Ecológicos, integradas por pequeños productores, familiares, campesinos e indígenas, con personalidad jurídica que requieran validar la calidad de su compost para su posterior venta. Esta fiscalización se realiza con personal del SAG en terreno y requiere por parte del productor cumplir con las normas técnicas y reglamentos establecidos, llevar registros de sus actividades productivas que permitan establecer un sistema de rastreabilidad, presentar un sistema de control interno y sus procedimientos, entre otros requisitos. Por lo tanto, para realizar este proceso de fiscalización, es necesario invertir recursos por parte del SAG y de los pequeños y medianos productores, sin embargo, desde el año 2016 el SAG ha bajado su cobertura de fiscalización de un 45\% a 18\% para predios orgánicos, lo que demuestra que el servicio no tiene la capacidad suficiente para realizar esta fiscalización. Una mejora tecnológica para estos procesos de certificación y fiscalización, requerirían soluciones que implementen Tecnologías de la Información (TI), lo cual es de bajo costo y tiempo.
 
 
 \section{Solución propuesta}
 Según la NCh 2880 es de vital importancia el registro y control de temperaturas en las pilas de compost debido a la pasteurización y control de requisitos sanitarios, en especial los microbiológicos, los cuales indican que se debe mantener una temperatura mayor o igual a 55°C de tres a doce días dependiendo del método de compostaje. Además, mantener cierta temperatura por un período de tiempo indica el grado de maduración de la pila, lo que influye directamente en la clasificación de este. \\
-Se propone el diseño y fabricación de una lanza de medición de temperaturas en pilas de compost, que envíe la información necesaria de cada pila (posición, fecha, hora, id pila, fotografía, id del operador, etc.), junto con la toma de temperatura a un servidor que se encagará de guardar los datos. Estos datos, luego serán consultados por una app móvil para los agricultores y por una aplicación web para el SAG o algún organsmo pertinente (fiscalizador o comprador). Este envío de información será resguardado por un token y el acto de registro (temperatura, geolocalización, hora, id pila, id operador, fotografía, etc) será firmado digitalmente por la sonda autorizada. Así, la información permanece segura y servirá como fuente de validación para el ente fiscalizador. \\
+Se propone el diseño y fabricación de una lanza de medición de temperaturas en pilas de compost, que envíe la información necesaria de cada pila (posición, fecha, hora, id pila, fotografía, id del operador, etc.), junto con la toma de temperatura a un servidor que se encagará de guardar los datos. Estos datos, luego serán consultados por una aplicación web para el SAG o algún organismo pertinente (fiscalizador o comprador). El envío de información será resguardado por un token y el acto de registro (temperatura, geolocalización, hora, id pila, id operador, fotografía, etc) será firmado digitalmente por la sonda autorizada. Así, la información permanece segura y servirá como fuente de validación para el ente fiscalizador. \\
 Adoptar tecnologías asociadas a la agricultura digital puede transformarse en una oportunidad de desarrollo del sector agropecuario nacional, junto con contribuir a la incorporación de nuevos actores al mercado agropecuario.
 
 %%%
@@ -66,23 +66,16 @@ Adoptar tecnologías asociadas a la agricultura digital puede transformarse en u
 %%%
 
 \section{Objetivos generales}
-Desarrollar un sistema de fiscalización  de procesos de compostaje (
-con método de volteo o estática aireada) mediante un dispositivo sensor que, conectado a internet, envíe la información a una base de datos; mantener un registro de temperaturas que sirva de prueba confiable, haciendo uso de alguna infraestructura de clave pública (PKI),
-%%%
-%por esto necesitamos el uso de PKI
-%https://es.wikipedia.org/wiki/Infraestructura_de_clave_p%C3%BAblica
-%%%
-para el organismo fiscalizador y para los futuros compradores; generar un reporte temporal con los datos de la pila y sus mediciones, el cual certifique la calidad del producto.
+Desarrollar un prototipo de sistema de fiscalización  de procesos de compostaje (con método de volteo o estática aireada), mediante un dispositivo sensor, haciendo uso de alguna infraestructura de clave pública (PKI), para propósitos de fiscalización o auto fiscalización.
 
 \section{Objetivos específicos}
 %%%
 %hay que considerar el desarrollo una infraestructura PKI para el prototipo
 %%%
 \begin{enumerate}
-	\item Diseño y fabricación de un instrumento de medición de temperatura para pilas de compost 
-	\item Diseño e implementación de aplicación web para consultas de temperaturas
-	\item Desarrollo de una infraesctructura de clave pública PKI.
-	\item Diseño e implementación de app móvil para el fabricante de compost (consulta de temperaturas)
+	\item Diseño y fabricación de un instrumento de medición de temperatura para pilas de compost basado en un SBC (Single Board Computer) y con la ayuda del Centro de Industria 4.0 de la Facultad de Ingeniería
+	\item Diseño e implementación de aplicación web para minitoreo remoto de temperaturas
+	\item Desarrollo de una infraestructura de clave pública PKI, para garantizar la  autenticación e integridad de la información.
 \end{enumerate}
 \section{Tareas}
 Asociados a cada uno de los objetivos:
@@ -91,8 +84,8 @@ Asociados a cada uno de los objetivos:
 	\begin{enumerate}
 		\item Diseño de una lanza de medición
 		\item Impresión 3D de la lanza diseñada
-		\item Instalación de un servidor en una Raspberry Pi
-		\item Crear circuito con sensor de temperatura y Raspberry Pi
+		\item Investigación y selección de SBC
+		\item integrar SBC con GPS, cámara y temocupla
 		\item Instalación del circuito en la lanza y desarrollar servicio de envío de datos
 	\end{enumerate}
 	\item
@@ -109,23 +102,21 @@ Asociados a cada uno de los objetivos:
 	\end{enumerate}
 	\item
 	\begin{enumerate}
-		\item Diseño UI
-		\item Diseño UX
-		\item Creación app móvil híbrida
-		\item Testing
 		
+		\item Testing app web
+		\item Pruebas de medición
 	\end{enumerate}
 \end{enumerate}
 \section{Recursos a utilizar}
 Se lista los recursos necesario y su utilización:
 \begin{itemize}
 	\item Impresora 3D e insumos\\
-	Para impirmir la lanza según el diseño propuesto
-	\item Raspberry Pi y sensor de temperatura\\
+	Para imprimir la lanza según el diseño propuesto
+	\item SBC, GPS, cámara y temocupla\
 	Tomar temperatura y enviar los registros al servidor
 	\item Servidor web\\
 	Ejecutar backend, guardar información en BD y servir API REST
-	\item Android Studio, Django, Flutter, Autodesk Inventor, Angular,  VS Code\\
+	\item  Django, Autodesk Inventor, Angular, VS Code, SGBD\\
 	Software y frameworks necesarios para diseño y desarrollo del sistema
 	
 \end{itemize}

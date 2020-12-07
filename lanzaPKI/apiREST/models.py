@@ -1,6 +1,7 @@
 from django.db import models
 
 class Cliente(models.Model):
+    """ Empresa o agricultor que compra la lanza"""
     #id automatico con autoincremento
     nombre = models.CharField(max_length=200, default="")
     rut = models.CharField(max_length=9, default=False)
@@ -13,6 +14,7 @@ class Cliente(models.Model):
         ordering = ('nombre', )
 
 class Usuario(models.Model):
+    """ Cuenta para ingresar a la página web """
     nombre = models.CharField(max_length=200, default="")
     rut = models.CharField(max_length=9, default=False)
     email = models.EmailField()
@@ -22,7 +24,12 @@ class Usuario(models.Model):
     class Meta:
         ordering = ('nombre', )
 
+class Administrador(Usuario):
+    """Cuenta de administrador del sitio"""
+    cargo = models.CharField(max_length=200, default="", null=True)
+
 class Lanza(models.Model):
+    """Instrumento de medición"""
     codigo = models.CharField(max_length=100, unique=True, null=False)
     numero_serie = models.CharField("numero de serie", max_length=100, unique=True, null=False)
     modelo = models.CharField(max_length=20, default="")
@@ -32,8 +39,8 @@ class Lanza(models.Model):
         ordering = ('cliente', )
 
 
-
 class Medicion(models.Model):
+    """Datos que son medidos por la lanza"""
     fecha_creacion = models.DateTimeField("fecha de creacion", auto_now_add=True)
     temperatura = models.IntegerField(default=0)
     humedad = models.IntegerField(null=True)
@@ -46,6 +53,7 @@ class Medicion(models.Model):
         ordering = ('lanza', )
 
 class MateriaPrima(models.Model):
+    """Materias primas utilizadas en el compost"""
     nombre = models.CharField(max_length=100, null=False)
     cantidad = models.IntegerField(null=False)
     unidad_medida = models.CharField

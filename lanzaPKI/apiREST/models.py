@@ -20,6 +20,7 @@ class Usuario(models.Model):
     email = models.EmailField()
     password = models.CharField(max_length=100, null=False)
     fecha_creacion = models.DateTimeField("fecha de creación", auto_now_add=True)
+    cliente = models.ForeignKey('Cliente', on_delete=models.DO_NOTHING, null=True)
 
     class Meta:
         ordering = ('nombre', )
@@ -39,15 +40,22 @@ class Lanza(models.Model):
         ordering = ('cliente', )
 
 
+class Pila(models.Model):
+    """Pila"""
+    predio = models.CharField(max_length=100)
+    fecha_creacion = models.DateTimeField("fecha de creación", auto_now_add=True)
+    estado = models.CharField(max_length=50)
+
+
 class Medicion(models.Model):
     """Datos que son medidos por la lanza"""
     fecha_creacion = models.DateTimeField("fecha de creacion", auto_now_add=True)
     temperatura = models.IntegerField(default=0)
     humedad = models.IntegerField(null=True)
-    pila = models.CharField(max_length=100, null=False)
-    predio = models.CharField(max_length=100, null=False)
-    foto = models.ImageField(upload_to='Fotos') #crear folder Fotos
+    foto = models.ImageField(upload_to='Fotos', null=True) #crear folder Fotos
+    posicion = models.CharField(max_length=20, null=True) #solo para prubas
     lanza = models.ForeignKey('Lanza', on_delete=models.DO_NOTHING)
+    pila = models.ForeignKey('Pila', on_delete=models.DO_NOTHING, null=True)
 
     class Meta:
         ordering = ('lanza', )
@@ -56,8 +64,8 @@ class MateriaPrima(models.Model):
     """Materias primas utilizadas en el compost"""
     nombre = models.CharField(max_length=100, null=False)
     cantidad = models.IntegerField(null=False)
-    unidad_medida = models.CharField
-    medicion = models.ForeignKey('Medicion', on_delete=models.DO_NOTHING)
+    unidad_medida = models.CharField(max_length=10, null=True)
+    medicion = models.ForeignKey('Pila', on_delete=models.DO_NOTHING)
 
 
 

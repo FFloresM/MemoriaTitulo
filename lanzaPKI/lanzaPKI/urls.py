@@ -20,8 +20,6 @@ from apiREST import views
 
 router = routers.DefaultRouter()
 router.register(r'clientes', views.ClienteViewSet)
-router.register(r'lanzas', views.LanzaViewSet)
-router.register(r'mediciones', views.LanzaViewSet)
 
 urlpatterns = [
     path('admin/', admin.site.urls),

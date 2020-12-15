@@ -1,7 +1,7 @@
-from .models import Cliente, Lanza, Medicion
+from .models import Cliente, Lanza, Medicion, Usuario
 from rest_framework import viewsets
 from rest_framework import permissions
-from apiREST.serializers import ClienteSelializer, LanzaSerializar, MedicionSerializar
+from apiREST.serializers import ClienteSelializer, UsuarioSerializer
 
 class ClienteViewSet(viewsets.ModelViewSet):
     """
@@ -11,18 +11,7 @@ class ClienteViewSet(viewsets.ModelViewSet):
     serializer_class = ClienteSelializer
     permission_classes = [permissions.IsAuthenticated]
 
-class LanzaViewSet(viewsets.ModelViewSet):
-    """
-    API endpoint que permite ver o editar lanzas
-    """
-    queryset = Lanza.objects.all()
-    serializer_class = LanzaSerializar
-    permission_classes = [permissions.IsAuthenticated]
-
-class MedicionViewSet(viewsets.ModelViewSet):
-    """
-    endpoint de la API para ver o editar Mediciones
-    """
-    queryset = Medicion.objects.all()
-    serializer_class = LanzaSerializar
+class UsuarioViewSet(viewsets.ModelViewSet):
+    queryset = Usuario.objects.all()
+    serializer_class = UsuarioSerializer
     permission_classes = [permissions.IsAuthenticated]

@@ -1,17 +1,31 @@
-from .models import Cliente, Lanza, Medicion
+from django.db.models import fields
+from .models import Cliente, Lanza, Medicion, Usuario
 from rest_framework import serializers
 
 class ClienteSelializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Cliente
-        fields = ['nombre', 'rut', 'direccion', 'telefono', 'email', 'password']
+        fields = (
+            'nombre',
+            'rut',
+            'direccion',
+            'telefono',
+            'email',
+            'fecha_creacion',
+        )
 
-class LanzaSerializar(serializers.HyperlinkedModelSerializer):
+class UsuarioSerializer(serializers.HyperlinkedModelSerializer):
+    cliente = serializers.SlugRelatedField(
+        queryset=Cliente.objects.all(),
+        slug_field='nombre'
+    )
     class Meta:
-        model = Lanza
-        fields = ['codigo', 'numero_serie', 'modelo', 'cliente']
-
-class MedicionSerializar(serializers.HyperlinkedModelSerializer):
-    class Meta:
-        model = Medicion
-        fields = ['temperatura', 'humedad', 'lanza']
+        model = Usuario
+        fields = (
+            'nombre',
+            'rut',
+            'email',
+            'password',
+            'fecha_creacion',
+            'cliente',
+        )

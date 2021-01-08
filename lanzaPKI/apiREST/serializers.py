@@ -29,3 +29,8 @@ class UsuarioSerializer(serializers.HyperlinkedModelSerializer):
             'fecha_creacion',
             'cliente',
         )
+
+class LanzaSerializer(serializers.HyperlinkedModelSerializer):
+    class Meta:
+        model = Lanza
+        fields = '__all__'

@@ -6,9 +6,14 @@ class Cliente(models.Model):
     nombre = models.CharField(max_length=200, default="")
     rut = models.CharField(max_length=9, default=False)
     direccion = models.CharField(max_length=200, default="")
-    email = models.EmailField()
+    email = models.EmailField(unique=True)
     telefono = models.IntegerField(null=True)
     fecha_creacion = models.DateTimeField("fecha de creación", auto_now_add=True)
+
+    def __str__(self):
+        if self.nombre:
+            return self.nombre
+        return self.rut
 
     class Meta:
         ordering = ('nombre', )
@@ -22,6 +27,9 @@ class Usuario(models.Model):
     fecha_creacion = models.DateTimeField("fecha de creación", auto_now_add=True)
     cliente = models.ForeignKey('Cliente', on_delete=models.DO_NOTHING, null=True)
 
+    def __str__(self):
+        return self.nombre
+
     class Meta:
         ordering = ('nombre', )
 
@@ -34,10 +42,10 @@ class Lanza(models.Model):
     codigo = models.CharField(max_length=100, unique=True, null=False)
     numero_serie = models.CharField("numero de serie", max_length=100, unique=True, null=False)
     modelo = models.CharField(max_length=20, default="")
-    cliente = models.ForeignKey('Cliente', on_delete=models.DO_NOTHING)
+    
 
-    class Meta:
-        ordering = ('cliente', )
+    def __str__(self):
+        return self.codigo
 
 
 class Pila(models.Model):
@@ -45,6 +53,10 @@ class Pila(models.Model):
     predio = models.CharField(max_length=100)
     fecha_creacion = models.DateTimeField("fecha de creación", auto_now_add=True)
     estado = models.CharField(max_length=50)
+    cliente = models.ForeignKey('Cliente', on_delete=models.DO_NOTHING)
+
+    class Meta:
+        ordering = ('cliente', )
 
 
 class Medicion(models.Model):
@@ -66,6 +78,13 @@ class MateriaPrima(models.Model):
     cantidad = models.IntegerField(null=False)
     unidad_medida = models.CharField(max_length=10, null=True)
     medicion = models.ForeignKey('Pila', on_delete=models.DO_NOTHING)
+
+    def __str__(self):
+        return self.nombre
+
+    class Meta:
+        ordering = ('nombre', )
+    
 
 
 

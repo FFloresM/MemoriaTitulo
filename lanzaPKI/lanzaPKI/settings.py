@@ -41,10 +41,12 @@ INSTALLED_APPS = [
     'apiREST.apps.ApirestConfig',
     'autofixture',
     'django_filters',
+    'corsheaders',
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -72,6 +74,12 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'lanzaPKI.wsgi.application'
+
+CORS_ORIGIN_ALLOW_ALL = False
+
+CORS_ORIGIN_WHITELIST = (
+    'http://localhost:3000',
+)
 
 
 # Database

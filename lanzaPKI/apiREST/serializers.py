@@ -6,6 +6,7 @@ class ClienteSelializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Cliente
         fields = (
+            'id',
             'nombre',
             'rut',
             'direccion',

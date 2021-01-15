@@ -1,5 +1,5 @@
-import React, { Component, component } from 'react';
-import EndPoints from './endpoints';
+import React, { Component } from 'react';
+import EndPoints from '../endpoints/endpoints';
 
 const endpoints = new EndPoints();
 
@@ -17,15 +17,19 @@ class ClienteList extends Component {
     componentDidMount() {
         var self = this;
         endpoints.getClientes().then(function (result) {
-            self.setState({clientes: result.data, nextPageURL: result.nextlink})
+            console.log(result);
+            self.setState({
+                clientes: result.results,
+                nextPageURL: result.next
+            })
         });
     }
 
-    handleDelete(e,pk) {
+    handleDelete(e,id) {
         var self = this;
-        endpoints.deleteCliente({pk: pk}).then(() => {
+        endpoints.deleteCliente({id: id}).then(() => {
             var newArr = self.state.clientes.filter(function(obj){
-                return obj.pk != pk;
+                return obj.id !== id;
             });
             self.setState({clientes: newArr})
         });
@@ -54,14 +58,20 @@ class ClienteList extends Component {
                     </thead>
                     <tbody>
                         {this.state.clientes.map( c => 
-                        <tr key={c.pk}>
+                        <tr key={c.id}>
+                            <td>{c.id}</td>
                             <td>{c.nombre}</td>
                             <td>{c.telefono}</td>
                             <td>{c.email}</td>
                             <td>{c.direccion}</td>
+                            <td>
+                                <button onClick={(e)=> this.handleDelete(e,c.id)}>Eliminar</button>
+                                <a href={"/clientes/" + c.id}>Actualizar</a>
+                            </td>
                         </tr>)}
                     </tbody>
                 </table>
+                <button className="btn btn-primary" onClick = {this.nextPage}>Siguiente</button>
             </div>
         )
     }

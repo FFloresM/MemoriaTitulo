@@ -4,10 +4,10 @@ class Cliente(models.Model):
     """ Empresa o agricultor que compra la lanza"""
     #id automatico con autoincremento
     nombre = models.CharField(max_length=200, default="")
-    rut = models.CharField(max_length=9, default=False)
+    rut = models.CharField(max_length=9)
     direccion = models.CharField(max_length=200, default="")
     email = models.EmailField(unique=True)
-    telefono = models.IntegerField(null=True)
+    telefono = models.CharField(max_length=15, default="")
     fecha_creacion = models.DateTimeField("fecha de creación", auto_now_add=True)
 
     def __str__(self):
@@ -21,7 +21,7 @@ class Cliente(models.Model):
 class Usuario(models.Model):
     """ Cuenta para ingresar a la página web """
     nombre = models.CharField(max_length=200, default="")
-    rut = models.CharField(max_length=9, default=False)
+    rut = models.CharField(max_length=9)
     email = models.EmailField()
     password = models.CharField(max_length=100, null=False)
     fecha_creacion = models.DateTimeField("fecha de creación", auto_now_add=True)
@@ -36,6 +36,9 @@ class Usuario(models.Model):
 class Administrador(Usuario):
     """Cuenta de administrador del sitio"""
     cargo = models.CharField(max_length=200, default="", null=True)
+
+    class Meta:
+        verbose_name_plural = 'Administradores'
 
 class Lanza(models.Model):
     """Instrumento de medición"""
@@ -53,7 +56,7 @@ class Pila(models.Model):
     predio = models.CharField(max_length=100)
     fecha_creacion = models.DateTimeField("fecha de creación", auto_now_add=True)
     estado = models.CharField(max_length=50)
-    cliente = models.ForeignKey('Cliente', on_delete=models.DO_NOTHING)
+    cliente = models.ForeignKey('Cliente', on_delete=models.DO_NOTHING, null=True)
 
     class Meta:
         ordering = ('cliente', )
@@ -70,6 +73,7 @@ class Medicion(models.Model):
     pila = models.ForeignKey('Pila', on_delete=models.DO_NOTHING, null=True)
 
     class Meta:
+        verbose_name_plural = 'Mediciones'
         ordering = ('lanza', )
 
 class MateriaPrima(models.Model):
@@ -83,6 +87,7 @@ class MateriaPrima(models.Model):
         return self.nombre
 
     class Meta:
+        verbose_name_plural = 'Materia Prima'
         ordering = ('nombre', )
     
 

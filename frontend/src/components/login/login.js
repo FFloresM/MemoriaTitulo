@@ -10,7 +10,7 @@ export default function Login() {
     }
     return(
         <div className="login-wrapper">
-            <form action="/clientes">
+            <form action="/dashboard">
                 <div className="mb-3">
                     <label for="exampleInputEmail1" className="form-label">Email</label>
                     <input 

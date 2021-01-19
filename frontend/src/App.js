@@ -1,15 +1,17 @@
 import  React, { Component } from  'react';
-import { BrowserRouter } from  'react-router-dom'
-import { Route } from  'react-router-dom'
+import { BrowserRouter } from  'react-router-dom';
+import { Route } from  'react-router-dom';
 
 import ClienteList  from  './components/clientes/ClienteList'
 import  ClienteCreateUpdate from './components/clientes/ClienteCreateUpdate'
+import Login from './components/login/login'
 import  './App.css';
 
 const  BaseLayout  = () => (
+    
   <div  className="container-fluid">
       <nav  className="navbar navbar-expand-lg navbar-light bg-light">
-          <a  className="navbar-brand" href='#'>Django React Demo</a>
+          <a  className="navbar-brand" href='/'>Dashboard</a>
           <button  className="navbar-toggler"  type="button"  data-toggle="collapse"  data-target="#navbarNavAltMarkup"  aria-controls="navbarNavAltMarkup"  aria-expanded="false"  aria-label="Toggle navigation">
           <span  className="navbar-toggler-icon"></span>
       </button>
@@ -21,7 +23,7 @@ const  BaseLayout  = () => (
       </div>
       </nav>
       <div  className="content">
-          <Route  path="/"  exact  component={ClienteList}  />
+          <Route  path="/login"  exact  component={Login}  />
           <Route  path="/clientes/:pk"  component={ClienteCreateUpdate}  />
           <Route  path="/clientes/"  exact  component={ClienteCreateUpdate}  />
       </div>

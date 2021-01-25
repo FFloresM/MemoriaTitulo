@@ -3,9 +3,10 @@ import { BrowserRouter } from  'react-router-dom';
 import { Route } from  'react-router-dom';
 
 import ClienteList  from  '../clientes/ClienteList';
-import  ClienteCreateUpdate from '../clientes/ClienteCreateUpdate';
+import ClienteCreateUpdate from '../clientes/ClienteCreateUpdate';
 import Login from '../login/login';
 import Dashboard from '../dashboard/dashboard';
+//import Chart from '../Chart/Chart';
 import  './App.css';
 
 const  BaseLayout  = () => (
@@ -32,7 +33,7 @@ const  BaseLayout  = () => (
   </div>
   )
 
-  class  App  extends  Component {
+  class  App  extends  React.Component {
 
     render() {
         return (

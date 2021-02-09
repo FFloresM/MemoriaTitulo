@@ -1,6 +1,6 @@
 from .models import Cliente, Lanza, Medicion, Usuario
 from rest_framework import viewsets, permissions, filters
-from apiREST.serializers import ClienteSelializer, UsuarioSerializer, LanzaSerializer
+from .serializers import ClienteSelializer, UsuarioSerializer, LanzaSerializer
 import django_filters.rest_framework
 
 class ClienteViewSet(viewsets.ModelViewSet):

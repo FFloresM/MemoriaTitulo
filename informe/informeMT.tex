@@ -1,0 +1,77 @@
+\documentclass[12pt, letterpaper]{article}
+\usepackage[spanish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{subcaption}
+\usepackage[hidelinks]{hyperref}
+
+\begin{document}
+
+\title{\bf DISEÑO E IMPLEMENTACIÓN DE SISTEMA DE FISCALIZACIÓN DE PROCESOS DE COMPOSTAJE}
+
+\author{\textbf{Francisco Flores Mellado} \\ Departamento de Ingeniería Informátoica \\ Universidad de Concepción \\ \and \textbf{Profesor Guía:} Pedro Pinacho Davidson \and \textbf{Comisión:} NC1 CN2}
+
+\maketitle
+
+\begin{abstract}
+aquí va el abstract: máx 10 lineas
+\end{abstract}
+
+
+
+\section{Introducción}
+Actualmente el país presenta un creciente desarrollo en la actividad del compostaje como una alternativa a la gestión de residuos orgánicos, los cuales provienen principalmente de restos de alimentos de mercado o ferias libres y de vegetales producto de las podas de parques y jardines. El compostaje es un proceso de tipo microbiológico para el tratamiento de componentes basado en procesos de mineralización y transformación de materia orgánica producido en condiciones aeróbicas y termófilas, cuya duración mínima es de seis semanas. Como resultado de este proceso se genera mayormante composrt, dioxido de carbono y agua. El compostaje se presenta como una alternativa a la quema agrícola.
+\par
+Se denomina compost al producto inocuo y libre de efectos fitotóxicos que resulta del proceso de compostaje. Está constituido principalmente por materia orgánica estabilizada, donde no se recono su origen, puesto que se degrada generando partículas más finas y oscuras. El composrt se produce a base de residuos orgánicos y específicamente suele ser utilizado como mejorador de algunas propiedades físicas del suelo como son su estructura, drenaje, aireación, retención de agua y nutrientes, prevención de la erosión del suelo, recuperaciónde suelos degradados y superfiecies alteradas sin uso agricola.
+\par
+Con el fin de mantener un estándar en la producción, mantenimiento, almacenaje, transporte y posteriro venta de compost, es que se creó una norma que busca, en términos generales, promover la gestión adecuada de los recursos sólidos orgánicos generados en el territorio nacional, evitar la producción de plagas, junto con promover y fomentar el desaroollo de la industria nacional de compost. En este sentido, la norma cubre aspectos relacionados a la clasificación de compost, requisitos de materis primas, requisitos del producto compostado que incluyen condiciones sanitarias y fisicoquímicos. Estos últimos, abarcan desde contenido de nutrientes, capacidad de rehidratación, pH, materia orgánica, hasta olores y humedad.
+\par
+El organismo a cargo de supervisar el cumplimiento de estas normas y la calidad del compost, para su uso de agricultura orgánica, es el Servicio Agrícola y Ganadero (SAG) que depende del miniesterio de agricultura. El SAG no tiene la capacidad de fiscalizar todos estos procesos debido a la falta de personal. Sin embargo, el SAG otorga los permisos necesarios a organismos de certificación nacionales y extranjeros, públicos o privados, para ingresar al Registro de Entidades Certificadores de Productos Orgánicos, quienes cumplen con las formalidades, requisitos y protocolos técnicos y profesionales necesarios para la ejecución de las labores de certificación. Estos organismos están enfocados principalmente en la actividad industrial de fabricación de prodcutos agrícolas. Por otro lado, también existe el Sistema de auto Certificación con fiscalización directa del SAG para Organizaciones de Agricultores Ecológicos, integrados por pequeños productores, familiares, campesinos e indígenas con personalidad jurídica que requieran validar su proceso de fabricación y caliad de su compost para su posterior venta. Esta foscalización se realiza con personal del SAG en terreno y requiere por parte del productor cumplir con las normas técnicas y reglamentos establecidos, llevar registros de sus actividades productivas que permitan establecer un sistema de rastreabilidad, presentar un sistema de control interno y sus procedimientos, entre otros requisitos. Por lo tanto, para realizar este proceso de fiscalización, es necesario invertir recursos por parte del SAG y de los pequeños y medianos productores. Sin embargo, desde el año 2016 el SAG ha bajado su cobertura de fiscalización de 45\% a 18\% para predios orgánicos, lo que demuestra que el servicio no tiene la capacidad técnica, de personal ni recursos suficientes para realizar esta labor. Luego, es posible que productores agrícolas utilicen compost de dudosa calidad, debido a procesos deficientes o inexistentes y no trazables, lo que puede llevar a no producir los efectos esperados al ser incorporados en suelos de cultivo, pudiendo además, su uso ser perjudicial.
+\par
+Según la norma chilena NCh2880 es de vital importancia el registro y control de temperaturas en las pilas de compost debido a la pasteurización y control de requisitos sanitarios, en especial los microbiológicos, los cuales indican que se debe mantener a una temperatura mayor o igual a 55°C de tres a doce días dependiendo del método de compostaje utilizado. Ademas, mantener cierta temperatura por un período de tiempo indica el grado de maduración de la pila, lo que influye directamente en la clasificación de este.
+\par 
+La sostenibilidad de la producción orgánica se basa en el manejo del suelo, que requiere la aplicación de materia orgánica estabilizada pera mejorar su estructura, vida activa y su disponibilidad de nutrientes [27]. La forma más eficiente de estabilizar materia orgánica es el compostaje. No obstante, esto requiere de una etapa termofílica para que el producto final (compost) tenga las características deseadas [28]. Desafortunadamente, en algunos casos, por desconocimiento o falta de ética, se utiliza como compost materiales que no han pasado por la etapa termofílica, por lo que no son transformados en compost y cuyo uso puede ser nocivo. Lo anterior, se avala con la inexistencia de sistemas de fiscalización eficientes que permitan una supervisión adecuada.
+\par 
+ El envío de información y el acto de registro de los datos será firmado digitalmente por la sonda autorizada. De esta manera, la información permanece segura, es confiable  
+\par 
+El objetivo es implementar un nuevo proceso de supervisión basado en un sistema de control remoto del proceso compostaje y desarrollar una sonda de medición que capture la temperatura de una pila de compost, su geolocalización, fecha y hora del registro e información fotográfica, que, usando técnicas criptográficas, asegura una cadena de custodia de los datos levantados con garantías de autenticidad, integridad y confidencialidad de la información y servirá como fuente de validación para el ente fiscalizador. Estos datos, luego serán consultados por el SAG o algún organismo pertinente (fiscalizador o comprador), mediante una aplicación web desarrollada para tales fines.
+Esto permite una fiscalización oportuna, lo cual reduce los costos de control y manejo de información que va en directo beneficio de los agricultores orgánicos. De esta forma, el compost comercializado y utilizado cumpliría con los requisitos del proceso, evitando problemas de diseminación de patógenos.
+\par 
+Así, el foco en la fiscalización busca garantizar buenas prácticas para el aumento en la calidad del compostaje, logrando la trazabilidad de un insumo base para la agricultura. Junto a lo anterior, adoptar tecnologías asociadas a la agricultura digital puede transformarse en una oportunidad de desarrollo del sector agropecuario nacional, también contribuye a la incorporación de nuevos actores al mercado agropecuario. Además, mejoras de tipo tecnológicas para estos procesos de fiscalización y certificación, que involucran soluciones mediante Tecnologías de la Información, son fáciles de usar, de bajo costo y tiempo. 
+
+
+\section{Discusión bibliográfica}
+
+
+
+\end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
